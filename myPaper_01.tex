@@ -567,16 +567,16 @@ Finally, to train RPN, we use back-propagation and stochastic gradient descent t
 \subsection{Pre-training}
 Due to the enormous number of parameters, the model we use, Zeiler and Fergus model, requires a huge amount of training examples, which takes much time a to collect and label. To address the issue, we first initialize the model by training it with images from ILSVRC 2012 and then fine-tune the domain of our model by Uper-Body dataset. In this way, the model can learn a higher level of abstract features before trying to learn from the specific dataset of the problem. %adding more comparison between 2 model - pre-train & not pre-train
 \subsection{Supervised fine-tuning}
-Many algorithms are proposed to address human detection problem. Most of them achieve high accuracy when whole body is captured or only obscured a little. We use upper-body dataset for training model, concerning the fact that humans in "wild environment" are usually obscured by other object such as tables, cars, motorbikes, etc. 
+Many algorithms are proposed to address human detection problem. Most of them achieve high accuracy when whole body is captured or only obscured a little. We use upper-body dataset for training model, concerning the fact that humans in "wild environment" are usually obscured by other object such as tables, cars, motorbikes, etc. To be clear, take a look at \ref{fig:h_exp1}. In this image, the lower parts of these people are hidden by the car. Therefore, should any detectors try find humans in this image by searching whole bodies, they will fail.
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.4\textwidth]{img7}
+	\caption{}
+	\label{fig:h_exp1}
+\end{figure}
 
 We divide the dataset into 4 classes: face wide \footnote{front face}, face side, upper body wide \footnote{the part above belly}, upper body side. Dividing upper-body dataset into 4 sub-classes allows the model to learn common features of each class better than to learn features of a super class, upper-body, only. Additionally, by using symmetric transformation, model can learn both left/right side of face/upper-body simultaneously.
-
-After training the model with ILSVRC 2012, we need to adapt the domain by our Upper-body dataset. 
-
-
-
 \input{Experiment.tex}
-
 \section{Conclusion}
 %The conclusion goes here.
 Human detection is
@@ -624,7 +624,7 @@ Human detection is
 
 \input{Bibliography.tex}
 
-\input{hoho.bib}
+
 % that's all folks
 \end{document}
 

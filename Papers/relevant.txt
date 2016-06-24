@@ -1,0 +1,26 @@
+https://crypto.stanford.edu/~pgolle/papers/dogcat.pdf
+Machine Learning Attacks Against the Asirra CAPTCHA
+Philippe Golle - Palo Alto Research Center
+Palo Alto, CA 94304, USA
+----
+
+https://cvg.ethz.ch/teaching/cvl/2012/grabcut-siggraph04.pdf
+“GrabCut” — Interactive Foreground Extraction using Iterated Graph Cuts
+Carsten Rother
+Vladimir Kolmogorov
+Andrew Blake
+
+Microsoft Research Cambridge, UK
+----
+
+https://www.cs.berkeley.edu/~rbg/papers/cvpr15/dpdpm.pdf
+Deformable Part Models are Convolutional Neural Networks
+1. Ross Girshick
+2. Forrest Iandola
+2. Trevor Darrell
+2. Jitendra Malik
+
+(1) Microsoft Research
+(2) UC Berkeley
+----
+

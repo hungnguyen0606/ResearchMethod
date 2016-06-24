@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{vietnam}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{ \lceil}{ \rceil}
+
+%----------------------------------------
+\usepackage{listings}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\usepackage{multirow}
+\usepackage{float}
+%---------------------------------------
+
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			\large{\textbf{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}}
+			\large{\textbf{TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN}}
+			\large{\textbf{KHOA CÔNG NGHỆ THÔNG TIN}}
+			
+			\begin{figure}[H]
+				\centerline{\includegraphics[scale = 0.5]{logo}}
+			\end{figure}
+			
+			\Large{\textbf{PHƯƠNG PHÁP NGHIÊN CỨU KHOA HỌC}}
+			\Large{\textbf{PROJECT PROPOSAL}}
+			
+		\end{center}
+		\vfill
+		\begin{flushright}
+			
+			\begin{tabular}{l l l}
+				GVLT: &Thầy Vũ Hải Quân&\\
+				&Thầy Trần Minh Triết&\\
+				SV: &Nguyễn Phan Mạnh Hùng&1312727\\
+				&Nguyễn Hoàng Khánh Duy&1312720\\
+				&Lục Kiến Nghiệp&1312734\\
+			\end{tabular}
+		\end{flushright}
+		
+		\vfill
+	\end{titlepage}
+	\pagebreak
+	\section{Động lực}
+	Ngày nay, ngày càng có nhiều gia đinh nuôi thú cưng nhằm phục vụ cho các nhu cầu khác nhau. Tuy vậy, không phải ai cũng có kiến thức hay thời gian để tìm hiểu về thú cưng của mình nhằm giúp cho việc chăm sóc và kết bạn với chúng trở nên dễ dàng. Từ thực tế này, nhóm mong muốn đề xuất một phương pháp hỗ trợ người nuôi có thể dễ dàng nhận biết và phân loại thú nuôi của mình thông qua hình ảnh một cách dễ dàng mà không cần đến sự hỗ trợ từ các chuyên gia.\\
+	Bên cạnh đó, đây cũng là chủ đề khó, bởi việc phân loại giữa các giống trong cùng một loài gặp khá nhiều khó khăn bởi chúng có hình dáng và ngoại hình tương tự nhau. Đã có một vài nghiên cứu được thực hiện trên chủ đề này và các chủ đề tương tự bằng các kĩ thuật khác nhau nhưng độ chính xác đạt được là chưa cao, do đó nhóm muốn tìm cách phối hợp các phương pháp đó nhằm đem lại kết quả khả quan hơn. 
+	\section{Nội dung nghiên cứu}
+	Nhóm dự định sẽ áp dụng Deformable part model, CNN, hay SVM, để cải thiện khả năng nhận dạng và phân loại thú nuôi qua hình ảnh.
+	\section{Các nghiên cứu liên quan}
+	Có nhiều nghiên cứu đã được thực hiện về chủ đề này hoặc các chủ đề tương tự.
+	\begin{itemize}
+		\item Bài báo "Cats and Dogs", của Omkar M Parkhi1, Andrea Vedaldi, Andrew Zisserman, và C. V. Jawahar. Trong nghiên cứu này, tác giả sử dụng deformable part model và bag-of-words model để giải quyết bài toán. Dựa trên 2 mô hình trên, tác giả phân tích được hình dáng (shape) và diện mạo (appearance) của loài vật từ ảnh. Mô hình được xây dựng trong nghiên cứu này đạt độ chính xác khoảng 59\%.
+		\item Bài báo "Automated flower classification over a large number of classes", của Maria-Elena Nilsback và Andrew Zisserman. Trong nghiên cứu này, tác giả nghiên cứu các đặc trưng hỗ trợ cho việc phân loại các loài hoa và sử dụng SVM để tổng hợp các đặc trưng đó. Cụ thể, tác giả đề xuất ứng với mỗi đặc trưng sẽ có một kernel riêng biệt, và sau cùng sẽ có một kernel là tổ hợp tuyến tính của các kernel trên. 
+		\item Bài báo "Object detection with discriminatively trained part", của P. F. Felzenszwalb, R. B. Grishick, D. McAllester, và D. Ramanan. Trong nghiên cứu này, tác giả tìm cách để phát hiện các vật thể khác nhau trong bức ảnh dựa trên sự kết hợp của các Deformable part models.
+		based models
+	\end{itemize}
+	Nhóm tham khảo các bài báo 1 và 3 bởi chúng sử dụng mô hình mà nhóm có dự định sử dụng là Deformable part model trên vấn đề liên quan trực tiếp tới chủ đề của nhóm là phân loại và phát hiện các loài thú cưng dựa trên ảnh. Bên cạnh đó vấn đề ở bài báo thứ 2 có liên quan tới chủ đề của nhóm (khác đối tượng), và có cùng khó khăn khi phải phân loại các đối tượng có sự tương đồng về mặt hình dáng.
+
+	\section{Thí nghiệm}
+	Nhóm sẽ tiến hành thí nghiệm và so sánh dựa trên bộ dữ liệu chuẩn của đại học Oxford: The Oxford-IIIT Pet Dataset, bao gồm 37 giống loài khác nhau (chó và mèo) và khoảng 200 ảnh cho mỗi loài. Số lượng ảnh tổng cộng là 7349.
+	
+\end{document}

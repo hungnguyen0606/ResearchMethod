@@ -1,0 +1,54 @@
+1) Deformable Part Models are Convolutional Neural Networks
+Ross Girshick: Facebook AI Research 
+Forrest Iandola:  University of Illinois at Urbana-Champaign 
+Trevor Darrell: University of California, Berkeley
+Jitendra Malik: University of California, Berkeley
+
+2) Cats and Dogs
+Omkar M Parkhi: 1,2
+Andrea Vedaldi: 1 
+Andrew Zisserman: 1 
+C. V. Jawahar:2
+- 1: Department of Engineering Science, University of Oxford, United Kingdom
+- 2: Center for Visual Information Technology, International Institute of Information Technology, Hyderabad, India
+
+3) Automated flower classification over a large number of classes
+Maria-Elena:
+Nilsback: 
+Andrew Zisserman
+
+4) Object detection with discriminatively trained part
+P. F. Felzenszwalb:
+R. B. Grishick:
+D. McAllester:
+D. Ramanan: 
+
+5)
+https://crypto.stanford.edu/~pgolle/papers/dogcat.pdf
+Machine Learning Attacks Against the Asirra CAPTCHA
+Philippe Golle - Palo Alto Research Center
+Palo Alto, CA 94304, USA
+----
+
+6)
+https://cvg.ethz.ch/teaching/cvl/2012/grabcut-siggraph04.pdf
+“GrabCut” — Interactive Foreground Extraction using Iterated Graph Cuts
+Carsten Rother
+Vladimir Kolmogorov
+Andrew Blake
+
+Microsoft Research Cambridge, UK
+----
+
+7)
+https://www.cs.berkeley.edu/~rbg/papers/cvpr15/dpdpm.pdf
+Deformable Part Models are Convolutional Neural Networks
+1. Ross Girshick
+2. Forrest Iandola
+2. Trevor Darrell
+2. Jitendra Malik
+
+(1) Microsoft Research
+(2) UC Berkeley
+----
+

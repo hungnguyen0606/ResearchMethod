@@ -1,0 +1,50 @@
+\section{Experiment results}
+The authors retrain the model with a different dataset to solve the Upper Body Detection problem. The dataset contains 98 images of people or groups of people. The authors concern 4 types of upper body, which is used as 4 classes for the ground truth.\\
+The 4 types of upper body are: face\_wide, face\_side, upper\_body\_wide, upper\_body\_wide
+The number of images that each class appears in is as the table below:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+ \hline
+\textbf{face\_wide} & \textbf{face\_side} & \textbf{upper\_body\_wide} & \textbf{upper\_body\_wide}\\ 
+\hline
+51 & 43 & 31 & 62 \\
+\hline
+\end{tabular}
+\end{center}
+
+To rate the result, we recommend a new scale:\\
+Let R = \((C - W) / A\)
+
+Where:\\
+R (rating) is the rating of the detection algorithm on a specific test. We want to maximize this value. And we can use this value to tell if one algorithm is better than another.\\
+C (correct) is the number of correct objects (upper body or face) detected.\\
+W (wrong) is the number of objects that is mistakenly detected.\\
+A (all) is the total number of faces and upper bodies appeared in the images used for testing.\\
+
+Let see why this formula works. We want to maximize C to reach A (the total number of objects in the test). Thus, \(C / A\) is pretty much the right formula for this detection problem. It represents the posibility that an object will be detected. The higher this value is, the better our algorithm is. But we don't want to forget that sometimes our detection system fails to detect an object and claims one object to be another. So we add the W value to the formula. In that way even the algorithm manages to detect all the objects in the test, but meanwhile mistake other objects to be faces or upper bodies, it still gets a bad rating. 
+
+The authors run the model on 5 tests. Each test contains 10 images. After that, we calculate the R values for each test and calculate the average value avg(R).
+
+The results is in the following table.
+\begin{center}
+\begin{tabular}{|c|c|}
+ \hline
+\textbf{Test ID} & \textbf{R value}\\
+\hline
+01 & 0.87 \\
+\hline
+02 & 0.82 \\
+\hline
+03 & 0.84 \\
+\hline
+04 & 0.92 \\
+\hline
+05 & 0.79 \\
+\hline
+
+\end{tabular}
+\end{center}
+
+The avarage value of R:\\
+avg(R) = \(\frac{0.87 + 0.82 + 0.84 + 0.92 + 0.79}{5} = 0.85\)

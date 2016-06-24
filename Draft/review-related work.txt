@@ -1,0 +1,3 @@
+2 phases:
+- unsupervied-pretrain -> supervised fine-tuning
+(24, 25, 18, 20, 16)

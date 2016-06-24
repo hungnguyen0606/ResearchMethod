@@ -1,0 +1,18 @@
+Tên đề tài: Cats and Dogs' breed classification - Phân loại giống CHÓ và mèo
+Mục tiêu: 
++ Áp dụng thuật toán Deformable part model lên tập dữ liệu về thú vật (cụ thể là chó mèo)
++ Thử nghiệm mô hình khác trên cùng 1 bộ dữ liệu để so sánh/ đánh giá
+
+Đóng góp:
++ Xây dựng mô hình mới
++ Phân tích số liệu từ đó rút ra ưu nhược điểm của mô hình mới so với mô hình cũ của tác giả
+
+Dataset:
++ Oxford  IIIT pet
++ Số lượng class: ...
++ 
+
+Code:
+- Chưa chạy được code
+- Compile Cuda bị lỗi
+- 

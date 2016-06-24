@@ -1,0 +1,4 @@
+Learning feature:
+- Spare coding: represent the input vector as a combination of many basic vector. Each of these vectors, therefore, represents a higher abstract-level feature. - Efficient sparse coding algorithms - Honglak Lee Alexis Battle Rajat Raina Andrew Y. Ng
+
+- A multi-scale convolutional network to extract abstract features... - Pedestrian Detection with Unsupervised Multi-Stage Feature Learning 

@@ -1,0 +1,42 @@
+Abstract:
+ - Human dectection is an important technique used in many other problems such as traffic control, movies' features extracting, etc. However, it's hard to detect the whole body because the lower part is usually obscured by other objects like bikes, cars, tables, etc. This motivates us to use R-CNN to detect upper-body of the target. The experimental result using this technique achieves the accuracy of 95.5%. The dataset consists of 300 images. People in these images are from different ages and have different angles. This method can be improved by using better dataset.
+
+Introduction: 
+- The increasing development of machine learning provide us more tools for different kind of detection problems. One of the problems is human detection in images. Human detection is an important step to solves other important problems such as the pedestrian detection system in self-driving cars or surveillance camera systems. However, human bodies are mostly obscured by other objects like bikes, cars, tables, trees, etc. This is an obstacle that can dramatically decrease the accuracy of full-body detection algorithms. That's why the authors recommend detecting upper body only using Region-based Convolutional Neural Networks.
+- After trained with 300 images, the origin model achieves the accuracy of 90%. The modified model give a better result with the accuracy of 95.5%
+- The rest of this paper is organized as follows. In section II, the authors describe dataset use to train and validate the model. In section III, we discuss about our model used in this paper. Section IV presents the experimental results and evaluations. The conclusions and future work are presented in section V. 
+
+
+
+
+
+Upper body detection using HOG [1] needs high contrast and clear images or videos for accepted accuracy. Otherwise, boundaries become fuzzy, which provides incomplete gradient information.
+To get rid of these disadvantages, the author of [1] suggests upper body human detection segmentation in low contrast video [2]
+1st phase: using image processing technique to provide the shape of object first then using SVM to confirm the object is upper body of a human or not.
+2nd phase: contour energy minimization procedure to fix the error when the contour become wrong with the video time frame - which will cause SVM classify some frame non-human type while the previous frame is human (illumination)
+Still, using much image processing and mathematics makes the problem more complex and less general. So we offer to use Region-based Convolutional Neural Networks, which can provide good result despite of the difficulty input images. In this paper we also introduce RPN (region proposal network) which makes the algorithm run faser by sharing convolution features with r-cnn.
+
+
+
+- In some problems like movie rating, we have pretty much ambigous features such as actors but don't have their appearance at some time frame, their main act ... That's why we propose a new way using upper body detection to extract 
+
+
+So we have an idea that is to extract feature more exactly by using r-cnn upper body detection to give better feature by pre-processing given data. which give pretty high accuracy over then 90%. Then it would open a better dataset to another problem like movie rating for example.
+Intorduction:
+- 
+
+
+
+
+
+----------------Nghiep --------------
+upper body detection using HOG [1]- which will need a clear img/vid to do so. If the img/vid got low contrast or blurry then it would make the boundary become fuzzy, which provide incomplete gradient information.
+upper body human detection segmentation in low contrast video [2]
+1st phase: using image processing technique to provide the shape of object first then using SVM to confirm the object is upper body of a human or not.
+2nd phase: contour energy minimization procedure to fix the error when the contour become wrong with the video time frame - which will cause SVM classify some frame non-human type while the previous frame is human (illumination)
+Still, using much image processing and mathematics making the problem kinda more complex and less general. So we offer to use machine learning techinque like r-cnn, which can provide good result despite of the difficulty input images. We still gonna use some image processing technique but only at the pre-processing data phase - extract the background and object would help a lot in training phase, but not as hard as [2]
+
+
+
+//We still gonna use some image processing technique but only at the pre-processing data phase - extract the background and object would help a lot in training phase, but not as hard as [2]
+

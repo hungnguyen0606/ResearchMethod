@@ -538,20 +538,7 @@ The main goal of this stage is to propose a set of image's portions that is like
 	\item \textbf{Local interest point} \cite{localinterestpoint1} Instead of considering all the windows, we only need to concern the areas around interested points extracted from images. In this way, we can decrease the number of candidate object dramatically.
 \end{itemize} 
 %This stage plays an important role in detection problems because regions suggested will be used as candidate objects for the classifier next stage. Therefore,  
-\subsection{The classifier stage}
-
-..After talking about what this stage does..
-
-To classify these object, we don't usually use the pixels directly. The two popular methods are appearance-based method and feature-based method. 
-Appearance based method uses example images to perform this stage, but changes in lighting or color, changes in view direction, and changes in size or shape can fail our system. Edge matching, greysacle matching and gradient matching are some of appearance-based methods.
-
-The other method is feature-based method. In this method, we usually extract some features from objects to use instead of using the pixels directly.\cite{realtimeface}. The reason they explained in \cite{realtimeface} is because feature an act to encode ad-hoc domain knowledge that is difficult to learn using a finite quantity of data and the feature based system operates much faster than a pixel based system. There are a lot of feature we can use. 
-
-In face detection\cite{realtimeface}, Paul and Michael use Rectangle feature. 
-------Chen cai hinh vo day---------
-Them sum of pixels which lie within the white rectangles are substracted from the sum of pixels in the grey rectangles. Using intergral image \cite{realtimeface}, we can compute any rectangle feature rapidly. Other popular feature we can use are SIFT, SURF, HOG, etc.
-
-Traning:
+\input{Classifier.tex}
 \section{Method}
 Our system is divided into following part:
 \begin{enumerate}
@@ -637,7 +624,7 @@ Human detection is
 
 \input{Bibliography.tex}
 
-
+\input{hoho.bib}
 % that's all folks
 \end{document}
 

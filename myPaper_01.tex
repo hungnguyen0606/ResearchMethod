@@ -307,6 +307,7 @@
 % There should be no need to do such things with IEEEtran.cls V1.6 and later.
 % (Unless specifically asked to do so by the journal or conference you plan
 % to submit to, of course. )
+\usepackage{amsmath}
 \usepackage{float}
 \usepackage[]{placeins}
 \usepackage{wrapfig}
@@ -566,10 +567,34 @@ This approach, using shared RPN and the sliding window, has 2 important properti
 \subsubsection{Training}
 To train RPN, we use stochastic gradient descent and back-propagation. The loss function is:
 \begin{equation}\label{eq:RPN_loss}
-L(p, l, \hat{p}_g, \hat{l}_g) = \frac{1}{N_{cls}}L_{cls}(l^i, \hat{l}^i_g) + \frac{1}{N_{reg}} L_{reg}(p^i, \hat{p}^i_g)
+L(p, l, \hat{p}_g, \hat{l}_g) = \frac{1}{N_{cls}}\sum_{i}L_{cls}(l^i, \hat{l}^i) + \frac{1}{N_{reg}}\sum_{i} L_{reg}(p^i - \hat{p}^i)
 \end{equation}
-In \ref{eq:RPN_loss}, $$p^i$$ is vector representing the coordinate of the bounding box predicted by regression layer associated with anchor $$i$$ of mini-batch samples and $$l^i$$ is the probability that region $$i$$ contains object or not. Similarly, $$p^i_g$$ is the coordinate of the ground-truth bounding box, and $$l^i_g$$ is the ground-truth label of region $$i$$.
+In \ref{eq:RPN_loss}, $p^i$ is vector representing the coordinate of the bounding box, which includes ${x, y, w, h}$\footnote{x, y are the coordinates of the box's center, and w, h are its width and height correspondingly.}, predicted by regression layer associated with anchor $i$ of mini-batch samples and $l^i$ is the probability that region $i$ contains object or not. Similarly, $\hat{p}^i$ is the coordinate of the ground-truth bounding box, and $\hat{l}^i$ is the ground-truth label of region $i$.
+\begin{equation}
+l^i_g = 
+\begin{cases}
+1 & \text{if region i contains object} \\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
 
+$L_{cls}$ is the cross-entropy loss function:
+\begin{equation}
+L_{cls} = \hat{l}^i \log{l^i} + (1-\hat{l}^i) \log(1-l^i)
+\end{equation}
+
+$L_{reg}$ is a robust $L_1$\cite{fastRCNN}:
+\begin{equation}
+L_{reg}(p^i, \hat{p}^i) = \sum_{u \in \{x, y, w, h\}} smooth_{L_1}(u_{p^i} - u_{\hat{p}^i})
+\end{equation}
+in which
+\begin{equation}
+smooth_{L_1} = 
+\begin{cases}
+0.5x^2 & \text{if |x| < 1}\\
+|x| - 0.5 & \text{otherwise}
+\end{cases}
+\end{equation}
 Finally, to train RPN, we use back-propagation and stochastic gradient descent through 100000 iterations. Learning rate, weight decay, and momentum is 0.001, 0.0005, and 0.9 correspondingly.
 \subsection{Pre-training}
 Due to the enormous number of parameters, the model we use, Zeiler and Fergus model, requires a huge amount of training examples, which takes much time a to collect and label. To address the issue, we first initialize the model by training it with images from ILSVRC 2012 and then fine-tune the domain of our model by Uper-Body dataset. In this way, the model can learn a higher level of abstract features before trying to learn from the specific dataset of the problem. %adding more comparison between 2 model - pre-train & not pre-train

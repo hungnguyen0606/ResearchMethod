@@ -591,11 +591,11 @@ in which
 \begin{equation}
 smooth_{L_1} = 
 \begin{cases}
-0.5x^2 & \text{if |x| < 1}\\
+0.5x^2 & \text{if } |x| < 1\\
 |x| - 0.5 & \text{otherwise}
 \end{cases}
 \end{equation}
-Finally, to train RPN, we use back-propagation and stochastic gradient descent through 100000 iterations. Learning rate, weight decay, and momentum is 0.001, 0.0005, and 0.9 correspondingly.
+We train the model with 100000 iterations. Learning rate, weight decay, and momentum is 0.001, 0.0005, and 0.9 correspondingly.
 \subsection{Pre-training}
 Due to the enormous number of parameters, the model we use, Zeiler and Fergus model, requires a huge amount of training examples, which takes much time a to collect and label. To address the issue, we first initialize the model by training it with images from ILSVRC 2012 and then fine-tune the domain of our model by Uper-Body dataset. In this way, the model can learn a higher level of abstract features before trying to learn from the specific dataset of the problem. %adding more comparison between 2 model - pre-train & not pre-train
 \subsection{Supervised fine-tuning}
@@ -612,7 +612,7 @@ We divide the dataset into 4 classes: face wide \footnote{front face}, face side
 \section{Conclusion}
 
 %The conclusion goes here.
-Human detection is
+In this paper, we suggest using Faster R-CNN to address human detection problem. However, by observing hundreds of images from surveillance cameras and the internet, we conclude that lower-bodies, below bellies, contribute little useful information for detecting humans, and under some circumstances they become serious obstacles for detectors because in most cases, lower-bodies are obscured by other objects or by camera perspective. That's why we propose training the model with the upper-body dataset instead. The model trained with this dataset perform well on images randomly collected from the internet even though the dataset contains only 98 images. 
 %R-CNN is a powerful tools to address human detection problem. Howe
 %\section{Future work}
 
@@ -623,9 +623,6 @@ Human detection is
 % use section* for acknowledgment
 %\section*{Acknowledgment}
 
-\pagebreak
-\section*{}
-\pagebreak
 
 
 

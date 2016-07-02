@@ -415,17 +415,7 @@ Human dectection is an important technique used in many other problems such as t
 
 
 
-\section{Introduction}
-% no \IEEEPARstart
-The increasing development of machine learning provide us more tools for different kind of detection problems. One of the problems is human detection in images. Human detection is an important step to solves other important problems such as the pedestrian detection system in self-driving cars or surveillance camera systems. However, human bodies are mostly obscured by other objects like bikes, cars, tables, trees, etc. This is an obstacle that can dramatically decrease the accuracy of full-body detection algorithms. That's why the authors recommend detecting upper body only using Region-based Convolutional Neural Networks.
-
-There are many methods used for human detection, including SVM with discrete Wavelet transform \cite{wavelet} and HOG\cite{hog}. However, these methods have some disadvantages. For example, if images have low contrast and unclear boundaries due to some factors such as light or low-quality cameras, the images will provide incomplete gradient information, the fact that dramatically decreases the accuracy of detectors. To get rid of these disadvantages, we can apply some image preprocessing techniques. However, each image has different characteristics, therefore requires different techniques to preserve its properties. 
-%This prevents systems from detecting humans from images extracted from videos due to 
-
-The core idea of our method is using R-CNN trained with the dataset of humans' upper-body. To improve the accuracy, we pre-train the model using a large auxiliary dataset, ILSVRC, as recommended by \cite{rcnn}. After trained with 300 images, the origin model achieves the accuracy of 90\% [need to fix]. The modified model give a better result with the accuracy of 95.5\% [need to fix].
-
-The rest of this paper is organized as follows. In section II, the authors describe dataset and methodology use to train and validate the model. In section III, we discuss about our model used in this paper. Section IV presents the experimental results and evaluations. The conclusions and future work are presented in section V. 
-
+\input{introduction.tex}
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
 % For figures, \caption should occur after the \includegraphics.

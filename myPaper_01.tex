@@ -541,18 +541,25 @@ The main goal of this stage is to propose a set of image's portions that is like
 %This stage plays an important role in detection problems because regions suggested will be used as candidate objects for the classifier next stage. Therefore,  
 \input{Classifier.tex}
 \section{Method}
-\begin{figure}
+\begin{figure}[h]
 	\centering
-	\includegraphics[width = 0.4\textwidth]{ModelStructure}
+	\includegraphics[width = 0.5\textwidth]{ModelStructure}
 	\caption{Model structure \cite{slidingwin5}}
 \end{figure}
 The model is divided into 3 main part:
 \begin{enumerate}
-	\item Shared convolutional layer.
+	\item Shared convolutional layers.
 	\item Region proposal network (RPN) (described in \ref{RPN}).
 	\item Classifier - with Softmax layer on top.
 \end{enumerate}
 
+\subsection{Shared convolutional layers}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = 0.5\textwidth]{sharedconv}
+	\caption{Shared convolutional layers \cite{ZF}}
+\end{figure}
+Original images are first scaled or adjusted to $224 \times 224$ images and then convolved with 96 $(7 \times 7)$-filters using stride 2 to produce corresponding number of feature maps of size $110 \times 110$. These feature maps are passed through rectified linear unit (ReLU), $(3 \times 3)$-max pooling and contrast normalization layer. Layer 2 has the same portions as layer 1. However, in layer 3, 4, and 5, feature maps are only pass through a ReLU layer.
 \subsection{Region proposal network}\label{RPN}
 %There're many ways, which are mentioned above, to localize objects in images such as sliding window, local interest point, etc. 
 In this paper, we use Region Proposal Network (RPN)\cite{slidingwin5} to suggest regions for the classifier. RPN takes images of multiple sizes as input and outputs pairs of 

@@ -640,13 +640,27 @@ We divide the dataset into 4 classes: face wide \footnote{front face}, face side
 %\FloatBarrier
 \input{Experiment.tex}
 
-\section{Conclusion}
+\section{Conclusion and Future Work}
 
 %The conclusion goes here.
 In this paper, we suggest using Faster R-CNN to address human detection problem. However, by observing hundreds of images from surveillance cameras and the internet, we conclude that lower-bodies, below bellies, contribute little useful information for detecting humans, and under some circumstances they become serious obstacles for detectors because in most cases, lower-bodies are obscured by other objects or by camera perspective. That's why we propose training the model with the upper-body dataset instead. The model trained with this dataset perform well on images randomly collected from the internet even though the dataset contains only 98 images. 
 %R-CNN is a powerful tools to address human detection problem. Howe
-\section{Future work}
----- viet cai gi bay gio :(( ----
+
+This promising result leads us to an interesting problem, which is camouflage detection. Even though our detector works well on common pictures taken from normal environment where humans can be easily detached from the background, in other pictures such as figure \ref{fig:trunkboy} and \ref{fig:camouflage}, our detector has difficulty detecting humans. This problem also has another obstacle, scarce training data. These difficulties leads to another question whether we can construct a CNN that can learn 3D features efficiently from available images such as ILSVRC and then fine-tune the model as we do in upper-body detector.
+%where humans use some special technique to blend into the environment
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{019}
+	\caption{In this picture, although more than 50\% of the boy is obscured by the trunk, we can still realize him due to the overall body shape.}\label{fig:trunkboy}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{camo3}
+	\caption{In this picture, the artist almost blends into the background. However, we still recognize him due to the unusual depth of the picture.}\label{fig:camouflage}
+\end{figure}
+
 
 % conference papers do not normally have an appendix
 

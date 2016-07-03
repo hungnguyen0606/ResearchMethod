@@ -609,8 +609,37 @@ Many algorithms are proposed to address human detection problem. Most of them ac
 	\label{fig:h_exp1}
 \end{figure}
 
-We divide the dataset into 4 classes: face wide \footnote{front face}, face side, upper body wide \footnote{the part above belly}, upper body side. Dividing upper-body dataset into 4 sub-classes allows the model to learn common features of each class better than to learn features of a super class, upper-body, only. Additionally, by using symmetric transformation, model can learn both left/right side of face/upper-body simultaneously.
-\FloatBarrier
+We divide the dataset into 4 classes: face wide \footnote{front face}, face side, upper body wide \footnote{the part above belly}, and upper body side, described in figure \ref{fig:dataset}. Dividing upper-body dataset into 4 sub-classes allows the model to learn common features of each class better than to learn features of a super class, upper-body, only. Additionally, by using symmetric transformation, model can learn both left/right side of face/upper-body simultaneously.
+\begin{figure*}
+	\centering
+	\begin{subfigure}[b]{0.24\textwidth}
+		\includegraphics[width=\textwidth]{face_side}
+		\caption{Face side}
+		\label{fig:fs}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.18\textwidth}
+		\includegraphics[width=\textwidth]{face_wide}
+		\caption{Face wide}
+		\label{fig:fw}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.2\textwidth}
+		\includegraphics[width=\textwidth]{ub_side}
+		\caption{Upper-body side}
+		\label{fig:ubs}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.2\textwidth}
+		\includegraphics[width=\textwidth]{ub_wide}
+		\caption{Upper-body wide}
+		\label{fig:ubw}
+	\end{subfigure}
+	\caption{Dataset}\label{fig:dataset}
+\end{figure*}
+%\FloatBarrier
 \input{Experiment.tex}
 
 \section{Conclusion}
@@ -655,7 +684,7 @@ In this paper, we suggest using Faster R-CNN to address human detection problem.
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\FloatBarrier
+%\FloatBarrier
 \input{Bibliography.tex}
 
 
